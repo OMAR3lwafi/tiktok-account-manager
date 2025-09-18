@@ -18,7 +18,7 @@ export const getAuthUrl = api<GetAuthUrlRequest, GetAuthUrlResponse>(
     const { redirectUri } = req;
     const scope = "user.info.basic,video.upload,video.list";
     
-    const authUrl = `https://sandbox-www.tiktok.com/auth/authorize/?client_key=${clientKey()}&response_type=code&scope=${scope}&redirect_uri=${encodeURIComponent(redirectUri)}`;
+    const authUrl = `https://www.tiktok.com/auth/authorize/?client_key=${clientKey()}&response_type=code&scope=${scope}&redirect_uri=${encodeURIComponent(redirectUri)}`;
     
     return { authUrl };
   }
