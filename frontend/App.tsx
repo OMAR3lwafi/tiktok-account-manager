@@ -11,6 +11,7 @@ import { AccountDetailsPage } from "./pages/AccountDetailsPage";
 import { UploadPage } from "./pages/UploadPage";
 import { AnalyticsPage } from "./pages/AnalyticsPage";
 import { SettingsPage } from "./pages/SettingsPage";
+import { TikTokCallbackPage } from "./pages/TikTokCallbackPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,6 +30,11 @@ function AppInner() {
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/auth/tiktok/callback" element={
+              <ProtectedRoute>
+                <TikTokCallbackPage />
+              </ProtectedRoute>
+            } />
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
             <Route
               path="/dashboard"

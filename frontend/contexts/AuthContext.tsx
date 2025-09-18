@@ -75,6 +75,5 @@ export function useAuth() {
 }
 
 export function useBackend() {
-  const { token } = useAuth();
   return backend;
 }
