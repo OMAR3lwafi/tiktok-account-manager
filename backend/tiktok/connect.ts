@@ -45,7 +45,7 @@ export const connect = api<ConnectRequest, TikTokAccount>(
     const { code, redirectUri } = req;
 
     // Exchange code for access token
-    const tokenResponse = await fetch("https://open.tiktokapis.com/v2/oauth/token/", {
+    const tokenResponse = await fetch("https://sandbox-open.tiktokapis.com/v2/oauth/token/", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -65,7 +65,7 @@ export const connect = api<ConnectRequest, TikTokAccount>(
     }
 
     // Get user info
-    const userResponse = await fetch("https://open.tiktokapis.com/v2/user/info/", {
+    const userResponse = await fetch("https://sandbox-open.tiktokapis.com/v2/user/info/", {
       headers: {
         Authorization: `Bearer ${tokenData.access_token}`,
       },
