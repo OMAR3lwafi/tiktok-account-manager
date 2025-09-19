@@ -75,12 +75,5 @@ export function useAuth() {
 }
 
 export function useBackend() {
-  const { token } = useAuth();
-  
-  // Configure backend client with auth token if available
-  if (token) {
-    backend.auth = { token };
-  }
-  
   return backend;
 }
